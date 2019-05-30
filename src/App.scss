@@ -2,6 +2,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  
   &-logo {
     margin: 8px 20px
   }
@@ -10,15 +11,11 @@
     display: flex;
     flex-grow: 1;
   }
-
-  &-menu {
-    width: 200px;
-    background: #252834;
-  }
   
   &-header {
     height: 56px;
     display: flex;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   &-link {

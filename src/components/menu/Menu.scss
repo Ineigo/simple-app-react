@@ -1,0 +1,18 @@
+.Menu {
+    width: 200px;
+    background: #252834;
+
+    &-item {
+        font-family: Roboto;
+        color: #fff;
+        padding: 16px;
+        
+        font-style: normal;
+        font-weight: 500;
+        line-height: 16px;
+        font-size: 14px;
+        letter-spacing: 0.3px;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}
