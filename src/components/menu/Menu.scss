@@ -22,5 +22,10 @@
         &:hover {
             background: #17191E;
         }
+
+        &_active {
+            color: #CFD73C;
+            background: #17191E;
+        }
     }
 }

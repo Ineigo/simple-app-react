@@ -8,7 +8,7 @@ import Page from './components/page/Page';
 class App extends Component {
   constructor(...args) {
     super(...args);
-    this.state = { items: [] };
+    this.state = { items: [], active: null };
     fetch('http://www.mocky.io/v2/5ced03033200005f000c0f2a')
       .then(res => res.text())
       // eslint-disable-next-line
@@ -21,15 +21,20 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
         </header>
         <section className="App-container">
-          <Menu items={this.state.items}/>
+          <Menu items={this.state.items} active={this.state.active}/>
           <Switch>
-            <Route path='/:type' render={props => {
-              return <Page data={this.state.items.find(item => item.state === props.match.params.type)}/>
-            } }/>
+            <Route path='/:type' render={props => this.renderRouteComponent(props.match.params.type)}/>
           </Switch>
         </section>
       </div>
     );
+  }
+
+  renderRouteComponent(type) {
+    if (type !== this.state.active) {
+      this.setState({ active: type });
+    }
+    return <Page data={this.state.items.find(item => item.state === type)}/>
   }
 }
 

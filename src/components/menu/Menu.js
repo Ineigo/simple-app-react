@@ -9,8 +9,7 @@ export default class Menu extends Component {
             state: PropTypes.string,
             title: PropTypes.string,
             case: PropTypes.string,
-        })).isRequired,
-        className: PropTypes.string,
+        })),
     };
 
     render() {
@@ -19,6 +18,6 @@ export default class Menu extends Component {
     }
 
     renderItems(items) {
-        return items.map(item => <MenuItem  key={item.state+item.icon} {...item} />);
+        return items.map(item => <MenuItem  key={item.state+item.icon} {...item} isActive={item.state === this.props.active} />);
     }
 }

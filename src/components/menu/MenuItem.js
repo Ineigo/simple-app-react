@@ -8,9 +8,11 @@ export default class MenuItem extends Component {
         state: PropTypes.string,
         title: PropTypes.string,
         case: PropTypes.string,
+        isActive: PropTypes.bool,
     }
 
     render() {
-        return <Link className="Menu-item" to={this.props.state}>{this.props.title}</Link>;
+        const className = `Menu-item ${this.props.isActive ? 'Menu-item_active' : ''}`;
+        return <Link className={className} to={this.props.state}>{this.props.title}</Link>;
     }
 }
